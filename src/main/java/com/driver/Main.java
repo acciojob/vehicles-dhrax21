@@ -9,6 +9,8 @@ public class Main {
         mercedes.move(40, 0);
         mercedes.accelerate(20);
         mercedes.accelerate(100);
+        System.out.println(mercedes.getCurrentGear());
+
         mercedes.stop();
     }
 }
