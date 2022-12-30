@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package com.driver;
 
 public class Car extends Vehicle {
@@ -15,81 +10,65 @@ public class Car extends Vehicle {
     private int seats;
 
     public int getWheels() {
-        return this.wheels;
-    }
-
-    public void setWheels(int wheels) {
-        this.wheels = wheels;
+        return wheels;
     }
 
     public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+        return type;
     }
 
     public int getDoors() {
-        return this.doors;
-    }
-
-    public void setDoors(int doors) {
-        this.doors = doors;
+        return doors;
     }
 
     public int getGears() {
-        return this.gears;
+        return gears;
     }
 
-    public void setGears(int gears) {
-        this.gears = gears;
+    public boolean isManual() {
+        return isManual;
     }
 
     public int getSeats() {
-        return this.seats;
-    }
-
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
-
-    public int getCurrentGear() {
-        return this.currentGear;
+        return seats;
     }
 
     public void setCurrentGear(int currentGear) {
         this.currentGear = currentGear;
     }
 
-    public boolean isManual() {
-        return this.isManual;
+    public int getCurrentGear() {
+        return currentGear;
     }
 
-    public void setManual(boolean manual) {
-        this.isManual = manual;
+
+    public void isManual(boolean manual) {
+        isManual = manual;
     }
 
-    public Car() {
+    public Car(String name,boolean isManual)
+    {
+        super(name);
+        this.isManual=isManual;
     }
 
     public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
-        super.setName(name);
-        this.wheels = wheels;
-        this.doors = doors;
-        this.gears = gears;
-        this.isManual = isManual;
-        this.type = type;
-        this.seats = seats;
-        this.currentGear = 1;
+        super(name);
+        this.wheels=wheels;
+        this.doors=doors;
+        this.gears=gears;
+        this.isManual=isManual;
+        this.type=type;
+        this.seats=seats;
+        this.currentGear=1;
     }
+    public void changeGear(int newGear){
+        this.currentGear=newGear;
 
-    public void changeGear(int newGear) {
-        this.currentGear = newGear;
-        System.out.println("changeGear method called - The gear is changed to: " + this.currentGear);
+        System.out.println("changeGear method called - The gear is changed to: " + currentGear);
     }
-
-    public void changeSpeed(int newSpeed, int newDirection) {
+    public void changeSpeed(int newSpeed, int newDirection){
+        move(newSpeed,newDirection);
         System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
     }
 }

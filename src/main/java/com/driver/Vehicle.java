@@ -10,11 +10,11 @@ public class Vehicle {
     private int currentSpeed;
     private int currentDirection;
 
-    public Vehicle() {
-    }
+//    public Vehicle() {
+//    }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -22,40 +22,40 @@ public class Vehicle {
     }
 
     public int getCurrentSpeed() {
-        return this.currentSpeed;
+        return currentSpeed;
     }
 
     public void setCurrentSpeed(int currentSpeed) {
-        this.currentSpeed = currentSpeed;
+        this.currentSpeed += currentSpeed;
     }
 
     public int getCurrentDirection() {
-        return this.currentDirection;
+        return currentDirection;
     }
 
     public void setCurrentDirection(int currentDirection) {
         this.currentDirection = currentDirection;
     }
 
+//    public Vehicle(String name) {
+//        this.name = name;
+//    }
+
     public Vehicle(String name) {
         this.name = name;
-    }
-
-    public Vehicle(String name, int currentSpeed, int currentDirection) {
-        this.name = name;
-        this.currentSpeed = currentSpeed;
+        this.currentSpeed = 0;
         this.currentDirection = 0;
     }
 
     public void steer(int direction) {
-        this.currentDirection = direction;
+        this.currentDirection += direction;
         System.out.println("steer method called - The direction is changed to: " + this.currentDirection + " degrees");
     }
 
     public void move(int speed, int direction) {
         this.currentSpeed = speed;
         this.currentDirection = direction;
-        System.out.println("move method called - The speed is changed to: " + this.currentSpeed + ", and the direction is changed to: " + this.currentDirection + " degrees");
+        System.out.println("move method called - The speed is changed to: " + currentSpeed + ", and the direction is changed to: " + currentDirection + " degrees");
     }
 
     public void stop() {
